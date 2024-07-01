@@ -62,7 +62,7 @@ def load_mpc_observations():
         3) Remove objects in the ignore list at the top of this file.
         4) Remove observations after jd_end specified at the top of this file.
     """
-    coms = neospy.data.cached_file_download("https://minorplanetcenter.net/iau/ECS/MPCAT-OBS/CmtObs.txt.gz")
+    coms = neospy.cache.cached_file_download("https://minorplanetcenter.net/iau/ECS/MPCAT-OBS/CmtObs.txt.gz")
     import gzip
     with gzip.open(coms, 'r') as f:
         lines = [x.decode() for x in f.readlines()]
